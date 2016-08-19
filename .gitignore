@@ -1,0 +1,17 @@
+# Sbt
+
+target/
+project/project/*
+project/target/*
+
+# Git 
+**/*.orig
+
+# IntelliJ Idea
+.idea/
+
+# Mac OS
+.DS_Store
+
+# Binaries 
+*.class
