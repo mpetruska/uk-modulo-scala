@@ -12,8 +12,8 @@ object AccountDigits {
 
   type Error = String
 
-  val accountNumberError = "Account number must contain exactly 8 decimal digits"
-  val sortCodeError = "Sort code must contain exactly 6 decimal digits"
+  val accountNumberError = "Account number format is not valid"
+  val sortCodeError = "Sort code must contain exactly 6 decimal digits without dashes"
 
   def parse(sortCode: String, accountNumber: String): Either[Error, AccountDigits] = {
     val sortCodeFormat = "[0-9]{6}".r
