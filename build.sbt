@@ -17,6 +17,7 @@ lazy val ukModuloScala = (project in file("."))
   .settings(commonSettings: _*)
   .settings(
     libraryDependencies ++= Seq(
+      "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
       "org.scalatest" %% "scalatest" % "3.0.0" % "test",
       "org.scalacheck" %% "scalacheck" % "1.13.2" % "test"
     )

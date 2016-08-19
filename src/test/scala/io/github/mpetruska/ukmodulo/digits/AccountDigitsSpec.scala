@@ -21,6 +21,14 @@ class AccountDigitsSpec extends WordSpec with PropertyChecks with Matchers {
       }
     }
 
+    "report parsing failure correctly" in {
+      AccountDigits.parse("12", "12345678") shouldBe Left(AccountDigits.sortCodeError)
+      AccountDigits.parse("abcdef", "12345678") shouldBe Left(AccountDigits.sortCodeError)
+      AccountDigits.parse("123456", "123458") shouldBe Left(AccountDigits.accountNumberError)
+      AccountDigits.parse("123456", "abcdefgh") shouldBe Left(AccountDigits.accountNumberError)
+      AccountDigits.parse("", "") shouldBe Left(AccountDigits.sortCodeError + ", " + AccountDigits.accountNumberError)
+    }
+
   }
 
 }
