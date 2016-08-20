@@ -1,4 +1,4 @@
-package io.github.mpetruska.ukmodulo.nonstandard
+package io.github.mpetruska.ukmodulo.digits.nonstandard
 
 import io.github.mpetruska.ukmodulo.digits.AccountDigits
 import org.scalatest.{Matchers, WordSpec}
