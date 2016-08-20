@@ -13,9 +13,7 @@ object Weights {
   def sum(weights: Weights): Int = weights.values.sum
 
   def sumDigits(weights: Weights): Int = {
-    val addDigits: (Int, Int) => Int = _ + _.toString.map(_.asDigit).sum
-
-    (0 /: weights.values) (addDigits)
+    weights.values.map(_.toString.map(_.asDigit).sum).sum
   }
 
   private def dotMul(left: Vector[Int], right: Vector[Int]): Weights = {
