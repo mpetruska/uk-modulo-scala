@@ -1,10 +1,9 @@
 package io.github.mpetruska.ukmodulo.nonstandard
 
+import io.github.mpetruska.ukmodulo.Error
 import io.github.mpetruska.ukmodulo.digits.AccountDigits
 
 object SevenDigit {
-
-  type Error = String
 
   def error = "Seven digit account number must be in format 1234567"
 

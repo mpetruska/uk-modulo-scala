@@ -1,5 +1,7 @@
 package io.github.mpetruska.ukmodulo.digits
 
+import io.github.mpetruska.ukmodulo.Error
+
 import scala.language.postfixOps
 
 case class AccountDigits(digits: Vector[Int]) {
@@ -9,8 +11,6 @@ case class AccountDigits(digits: Vector[Int]) {
 }
 
 object AccountDigits {
-
-  type Error = String
 
   val accountNumberError = "Account number format is not valid"
   val sortCodeError = "Sort code must contain exactly 6 decimal digits without dashes"

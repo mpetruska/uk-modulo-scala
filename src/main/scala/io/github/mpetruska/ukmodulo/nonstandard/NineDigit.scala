@@ -1,10 +1,9 @@
 package io.github.mpetruska.ukmodulo.nonstandard
 
+import io.github.mpetruska.ukmodulo.Error
 import io.github.mpetruska.ukmodulo.digits.AccountDigits
 
 object NineDigit {
-
-  type Error = String
 
   val santanderError = "Santander account numbers must be in format 123456789"
 

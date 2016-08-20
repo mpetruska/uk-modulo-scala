@@ -1,10 +1,9 @@
 package io.github.mpetruska.ukmodulo.nonstandard
 
+import io.github.mpetruska.ukmodulo.Error
 import io.github.mpetruska.ukmodulo.digits.AccountDigits
 
 object TenDigit {
-
-  type Error = String
 
   val nationalWestMinsterError = "National Westminster account numbers must be in format 0123456789 or 01-23456789"
   val coOperativeError = "Co-Operative account numbers must be in format 0123456789"
