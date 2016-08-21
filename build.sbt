@@ -8,8 +8,8 @@ lazy val commonSettings = Seq(
   licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
   pomExtra :=
     <scm>
-      <url>git@github.com:your-account/your-project.git</url>
-      <connection>scm:git:git@github.com:your-account/your-project.git</connection>
+      <url>git@github.com:mpetruska/uk-modulo-scala.git</url>
+      <connection>scm:git@github.com:mpetruska/uk-modulo-scala.git</connection>
     </scm>
     <developers>
       <developer>
