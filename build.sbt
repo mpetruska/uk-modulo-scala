@@ -1,16 +1,22 @@
 
 lazy val commonSettings = Seq(
-  version := "0.1-SNAPSHOT",
+  version := "0.9.0",
   organization := "io.github.mpetruska",
+  name := "uk-modulo-scala",
+  homepage := Some(url("https://github.com/mpetruska/uk-modulo-scala")),
   scalaVersion := "2.11.7",
+  licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
   pomExtra :=
-    <licenses>
-      <license>
-        <name>MIT License</name>
-        <url>http://www.opensource.org/licenses/mit-license.php</url>
-        <distribution>repo</distribution>
-      </license>
-    </licenses>
+    <scm>
+      <url>git@github.com:your-account/your-project.git</url>
+      <connection>scm:git:git@github.com:your-account/your-project.git</connection>
+    </scm>
+    <developers>
+      <developer>
+        <id>mpetruska</id>
+        <name>Mark Petruska</name>
+      </developer>
+    </developers>
 )
 
 lazy val ukModuloScala = (project in file("."))

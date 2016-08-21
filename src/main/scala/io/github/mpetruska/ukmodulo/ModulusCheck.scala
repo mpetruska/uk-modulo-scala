@@ -17,9 +17,6 @@ object ModulusCheck {
       case List() =>
         Right(true) // No modulus check can be performed, must assume account number is valid
 
-      case List((None, weightsRow)) =>
-        processStandard(accountDigits, weightsRow)
-
       case List((Some(1), weightsRow)) if weightsRow.checkMethod == DblAl =>
         Right(Exception1.check(accountDigits, weightRows.head.weights))
 
@@ -52,6 +49,13 @@ object ModulusCheck {
 
       case List((Some(14), row)) =>
         Exception14.check(accountDigits, row.weights)
+
+      case standardChecks if standardChecks.forall(_._1.isEmpty) =>
+        EitherChecks.all(
+          standardChecks.map{
+            case (_, row) => processStandard(accountDigits, row)
+          }: _*
+        )
 
       case _ =>
         Left(checkNotImplementedError)
