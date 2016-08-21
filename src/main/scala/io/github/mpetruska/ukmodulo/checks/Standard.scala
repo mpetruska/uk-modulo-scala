@@ -6,17 +6,25 @@ trait Standard {
 
   val modulus: Int
 
-  def check(accountDigits: AccountDigits, weights: Weights): Boolean = {
+  def calculateSum(accountDigits: AccountDigits, weights: Weights): Int = {
     import Weights._
-    sum(dotMul(weights, accountDigits)) % modulus == 0
+    sum(dotMul(weights, accountDigits))
+  }
+
+  def check(accountDigits: AccountDigits, weights: Weights): Boolean = {
+    calculateSum(accountDigits, weights) % modulus == 0
   }
 
 }
 
-object Standard10 extends Standard {
+trait Standard10 extends Standard {
   val modulus: Int = 10
 }
 
-object Standard11 extends Standard {
+object Standard10 extends Standard10
+
+trait Standard11 extends Standard {
   val modulus: Int = 11
 }
+
+object Standard11 extends Standard11

@@ -1,6 +1,6 @@
 package io.github.mpetruska.ukmodulo.digits
 
-case class Weights(values: Vector[Int]) {
+case class Weights private[ukmodulo] (values: Vector[Int]) {
   require(values.length == 14)
 }
 
