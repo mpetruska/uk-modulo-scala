@@ -6,6 +6,9 @@ case class Weights private[ukmodulo] (values: Vector[Int]) {
 
 object Weights {
 
+  def zeroiseUtoB(weights: Weights): Weights =
+    Weights(Vector.fill(8)(0) ++ weights.values.drop(8))
+
   def dotMul(weights: Weights, accountDigits: AccountDigits): Weights = dotMul(weights.values, accountDigits.digits)
 
   def dotMul(left: Weights, right: Weights): Weights = dotMul(left.values, right.values)

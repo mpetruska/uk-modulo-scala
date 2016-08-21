@@ -37,6 +37,9 @@ object ModulusCheck {
       case List((Some(5), mod11Row), (Some(5), dblalRow)) if mod11Row.checkMethod == Mod11 && dblalRow.checkMethod == DblAl =>
         Exception5.check(accountDigits, mod11Row.weights, dblalRow.weights)
 
+      case List((Some(6), check1Row), (Some(6), check2Row)) =>
+        Exception6.check(accountDigits, check1Row, check2Row)
+
       case _ =>
         Left(checkNotImplementedError)
     }
