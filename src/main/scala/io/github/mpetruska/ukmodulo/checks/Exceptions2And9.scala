@@ -10,11 +10,10 @@ object Exceptions2And9 extends Standard11 {
   val replacementSortCode = "309634"
 
   def check(accountDigits: AccountDigits, weight2: Weights, weight9: Weights): Either[Error, Boolean] = {
-    exception2Check(accountDigits, weight2)
-      .fold(_ => exception9Check(accountDigits, weight9), {
-        case true  => Right(true)
-        case false => exception9Check(accountDigits, weight9)
-      })
+    EitherChecks.any(
+      exception2Check(accountDigits, weight2),
+      exception9Check(accountDigits, weight9)
+    )
   }
 
   def exception2Check(accountDigits: AccountDigits, weights: Weights): Either[Error, Boolean] = {

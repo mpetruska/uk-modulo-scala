@@ -14,6 +14,9 @@ object AccountDigits {
 
   val sortCodeLength = 6
 
+  val sortCodeFormat = "[0-9]{6}".r
+  val accountNumberFormat = "[0-9]{8}".r
+
   val accountNumberError = "Account number format is not valid"
   val sortCodeError = "Sort code must contain exactly 6 decimal digits without dashes"
   val digitCodeError = "Unknown digit code"
@@ -22,9 +25,6 @@ object AccountDigits {
   val digitMap: Map[Char, Int] = (digitCodes zip (0 to 14)).toMap
 
   def parse(sortCode: String, accountNumber: String): Either[Error, AccountDigits] = {
-    val sortCodeFormat = "[0-9]{6}".r
-    val accountNumberFormat = "[0-9]{8}".r
-
     (sortCode, accountNumber) match {
       case (sortCodeFormat(), accountNumberFormat()) => Right(AccountDigits(s"$sortCode$accountNumber".toVector.map(_.asDigit)))
       case (sortCodeFormat(), _)                     => Left(accountNumberError)
@@ -45,6 +45,11 @@ object AccountDigits {
 
   def replaceSortCode(accountDigits: AccountDigits, newSortCode: String): Either[Error, AccountDigits] = {
     parse(newSortCode, getAccountNumber(accountDigits))
+  }
+
+  def shiftAccountNumberRight(accountDigits: AccountDigits): AccountDigits = {
+    import accountDigits.digits
+    AccountDigits((digits.take(sortCodeLength) :+ 0) ++ digits.slice(sortCodeLength, digits.length - 1))
   }
 
 }

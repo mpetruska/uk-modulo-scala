@@ -21,10 +21,10 @@ object Exception6 {
   def checkStandard(accountDigits: AccountDigits, row1: ModulusWeightRow, row2: ModulusWeightRow): Either[Error, Boolean] = {
     import ModulusCheck._
 
-    for {
-      firstCheck <- processStandard(accountDigits, row1).right
-      secondCheck <- processStandard(accountDigits, row2).right
-    } yield firstCheck && secondCheck
+    EitherChecks.all(
+      processStandard(accountDigits, row1),
+      processStandard(accountDigits, row2)
+    )
   }
 
 }

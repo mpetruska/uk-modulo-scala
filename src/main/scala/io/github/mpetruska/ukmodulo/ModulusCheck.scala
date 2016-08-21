@@ -24,12 +24,10 @@ object ModulusCheck {
         Right(Exception1.check(accountDigits, weightRows.head.weights))
 
       case List((Some(2), row2), (Some(9), row9)) if row2.checkMethod == Mod11 && row9.checkMethod == Mod11 =>
-        println(row2)
-        println(row9)
         Exceptions2And9.check(accountDigits, row2.weights, row9.weights)
 
-      case List((Some(3), row)) if row.checkMethod == DblAl =>
-        Exception3.performCheck(accountDigits, row.weights)
+      case List((None, row), (Some(3), rowDblAl)) if rowDblAl.checkMethod == DblAl =>
+        Exception3.check(accountDigits, row, rowDblAl)
 
       case List((Some(4), row)) if row.checkMethod == Mod11 =>
         Exception4.performCheck(accountDigits, row.weights)
@@ -39,6 +37,21 @@ object ModulusCheck {
 
       case List((Some(6), check1Row), (Some(6), check2Row)) =>
         Exception6.check(accountDigits, check1Row, check2Row)
+
+      case List((Some(7), weightRow)) =>
+        Exception7.check(accountDigits, weightRow)
+
+      case List((Some(8), weightRow)) =>
+        Exception8.check(accountDigits, weightRow)
+
+      case List((Some(10), weightRow10), (Some(11), weightRow11)) =>
+        Exceptions10And11.check(accountDigits, weightRow10, weightRow11)
+
+      case List((Some(12), row1), (Some(13), row2)) =>
+        Exceptions12And13.check(accountDigits, row1, row2)
+
+      case List((Some(14), row)) =>
+        Exception14.check(accountDigits, row.weights)
 
       case _ =>
         Left(checkNotImplementedError)
