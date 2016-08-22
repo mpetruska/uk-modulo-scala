@@ -66,7 +66,7 @@ result.isError() == false;
 
 // invalid format
 ModulusCheckResult result2 = new ModulusCheck().check("089999", "xxxx");
-result2.isError() == false;
+result2.isError() == true;
 result2.error() == "Account number format is not valid";
 ```
 
