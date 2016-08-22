@@ -44,6 +44,21 @@ class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matc
     (34, "Exception 14 where the first check fails and the second check passes.", "180002", "00000190", true)
   )
 
+  val additionalTestData = Table(
+    ("sortCode", "accountNumber", "shouldPass"),
+    ("404784",   "70872490",      true),
+    ("404784",   "70872491",      false),
+    ("205132",   "13537846",      true),
+    ("205132",   "23537846",      false),
+    ("090128",   "03745521",      true),
+    ("090128",   "13745521",      false),
+    ("560003",   "13354647",      true),
+    ("560003",   "23354647",      false),
+    ("308087",   "25337846",      false),
+    ("308088",   "14457846",      true),
+    ("308088",   "24457846",      false)
+  )
+
   "ModulusCheck" should {
 
     "pass the tests provided by the specification" in {
@@ -52,6 +67,15 @@ class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matc
           accountDigits <- AccountDigits.parse(sortCode, accountNumber).right
           actualResult  <- ModulusCheck.process(accountDigits).right
         } yield actualResult) shouldBe Right(result)
+      }
+    }
+
+    "pass additional test data" in {
+      forAll(additionalTestData) { (sortCode: String, accountNumber: String, shouldPass: Boolean) =>
+        (for {
+          accountDigits <- AccountDigits.parse(sortCode, accountNumber).right
+          actualResult  <- ModulusCheck.process(accountDigits).right
+        } yield actualResult) shouldBe Right(shouldPass)
       }
     }
 
