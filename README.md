@@ -17,4 +17,60 @@ unfortunately there can be errors that are undetected.
 
 License: [MIT](LICENSE)
 
-More coming soon...
+Getting started
+---------------
+
+Sbt:
+
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.0.1"
+
+pom.xml:
+
+    <dependency>
+      <groupId>com.github.mpetruska</groupId>
+      <artifactId>uk-modulo-scala_2.11</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+Usage
+-----
+
+Scala:
+
+```Scala
+import com.github.mpetruska.ukmodulo.ModulusCheck
+
+// valid account number
+ModulusCheck.check(sortCode = "089999", accountNumber = "66374958") === Right(true)
+
+// invalid account number
+ModulusCheck.check(sortCode = "089999", accountNumber = "66374959") === Right(false)
+
+// invalid format
+ModulusCheck.check(sortCode = "089999", accountNumber = "xxxx") === Left("Account number format is not valid")
+```
+
+Java:
+
+```Java
+import com.github.mpetruska.ukmodulo.java.ModulusCheck;
+import com.github.mpetruska.ukmodulo.java.ModulusCheckResult;
+
+// valid account number
+new ModulusCheck().check("089999", "66374958").isValidAccountNumber() == true;
+
+// invalid account number
+ModulusCheckResult result = new ModulusCheck().check("089999", "66374959");
+result.isValidAccountNumber() == false;
+result.isError() == false;
+
+// invalid format
+ModulusCheckResult result2 = new ModulusCheck().check("089999", "xxxx");
+result2.isError() == false;
+result2.error() == "Account number format is not valid";
+```
+
+Issues
+------
+
+Please report issues and feature requests [here](https://github.com/mpetruska/uk-modulo-scala/issues).
