@@ -1,6 +1,5 @@
 package com.github.mpetruska.ukmodulo
 
-import com.github.mpetruska.ukmodulo.digits.AccountDigits
 import org.scalatest.prop.TableDrivenPropertyChecks
 import org.scalatest.{Matchers, WordSpec}
 
