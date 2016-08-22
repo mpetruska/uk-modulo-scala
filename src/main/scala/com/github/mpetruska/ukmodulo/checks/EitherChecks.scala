@@ -19,4 +19,14 @@ object EitherChecks {
     }
   }
 
+  def any[E](eithers: Seq[Either[E, Boolean]]): Either[E, Boolean] = {
+    eithers.reduce[Either[E, Boolean]] {
+      case (left @ Left(_), Left(_)) => left
+      case (right @ Right(true), _)  => right
+      case (_, right @ Right(true))  => right
+      case (right @ Right(_), _)     => right
+      case (_, right @ Right(_))     => right
+    }
+  }
+
 }

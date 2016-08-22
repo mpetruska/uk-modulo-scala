@@ -2,11 +2,32 @@ package com.github.mpetruska.ukmodulo
 
 import com.github.mpetruska.ukmodulo.checks._
 import com.github.mpetruska.ukmodulo.digits.AccountDigits
+import com.github.mpetruska.ukmodulo.digits.nonstandard._
 import com.github.mpetruska.ukmodulo.table._
 
 object ModulusCheck {
 
   val checkNotImplementedError = "Check not implemented for the given account number"
+
+  def check(sortCode: String, accountNumber: String): Either[Error, Boolean] = {
+    EitherChecks.any(
+      Seq(
+        AccountDigits.parse(sortCode, accountNumber),
+        TenDigit.parseNationalWestminsterAccountNumber(sortCode, accountNumber),
+        TenDigit.parseCoOperativeAccountNumber(sortCode, accountNumber),
+        NineDigit.parseSantanderAccountNumber(sortCode, accountNumber),
+        SevenDigit.parse(sortCode, accountNumber),
+        SixDigit.parse(sortCode, accountNumber)
+      ).map(checkParsed)
+    )
+  }
+
+  def checkParsed(parseResult: Either[Error, AccountDigits]): Either[Error, Boolean] = {
+    for {
+      accountDigits <- parseResult.right
+      isValid <- process(accountDigits).right
+    } yield isValid
+  }
 
   def process(accountDigits: AccountDigits): Either[Error, Boolean] = {
     ModulusWeightTable.getWeightRowsFor(accountDigits).right.flatMap(processWithWeights(accountDigits))

@@ -63,19 +63,13 @@ class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matc
 
     "pass the tests provided by the specification" in {
       forAll(specificationTestData) { (_: Int, _: String, sortCode: String, accountNumber: String, result: Boolean) =>
-        (for {
-          accountDigits <- AccountDigits.parse(sortCode, accountNumber).right
-          actualResult  <- ModulusCheck.process(accountDigits).right
-        } yield actualResult) shouldBe Right(result)
+        ModulusCheck.check(sortCode, accountNumber) shouldBe Right(result)
       }
     }
 
     "pass additional test data" in {
       forAll(additionalTestData) { (sortCode: String, accountNumber: String, shouldPass: Boolean) =>
-        (for {
-          accountDigits <- AccountDigits.parse(sortCode, accountNumber).right
-          actualResult  <- ModulusCheck.process(accountDigits).right
-        } yield actualResult) shouldBe Right(shouldPass)
+        ModulusCheck.check(sortCode, accountNumber) shouldBe Right(shouldPass)
       }
     }
 
