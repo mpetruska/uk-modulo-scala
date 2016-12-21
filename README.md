@@ -23,14 +23,14 @@ Getting started
 
 Sbt:
 
-    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.0.1"
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.0.2"
 
 pom.xml:
 
     <dependency>
       <groupId>com.github.mpetruska</groupId>
       <artifactId>uk-modulo-scala_2.11</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
 
 Usage
@@ -75,3 +75,10 @@ Issues
 ------
 
 Please report issues and feature requests [here](https://github.com/mpetruska/uk-modulo-scala/issues).
+
+Version history
+---------------
+
+1.0.2 - adds Scala 2.12 to the released artifacts
+1.0.1 - better support for plain Java
+1.0.0 - initial release
