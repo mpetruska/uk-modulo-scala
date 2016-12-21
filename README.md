@@ -23,14 +23,14 @@ Getting started
 
 Sbt:
 
-    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.0.2"
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.1.0"
 
 pom.xml:
 
     <dependency>
       <groupId>com.github.mpetruska</groupId>
       <artifactId>uk-modulo-scala_2.11</artifactId>
-      <version>1.0.2</version>
+      <version>1.1.0</version>
     </dependency>
 
 Usage
@@ -79,7 +79,7 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
-* 1.x.x - updates implementation according to [version 4.00 of the spec](https://www.vocalink.com/media/2101/vocalink-validating-account-numbers-v400.pdf)
+* 1.1.0 - updates implementation according to [version 4.00 of the spec](https://www.vocalink.com/media/2101/vocalink-validating-account-numbers-v400.pdf)
   (effective from 2017/01/09)
 * 1.0.2 - adds Scala 2.12 to the released artifacts
 * 1.0.1 - better support for plain Java
