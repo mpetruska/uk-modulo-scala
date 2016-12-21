@@ -46,7 +46,7 @@ lazy val ukModuloScala = (project in file("."))
       ++ (scalaBinaryVersion.value match {
         case "2.11" | "2.12" =>
           Seq(
-            "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
+            "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.5"
           )
         case "2.10" =>
           Seq.empty
