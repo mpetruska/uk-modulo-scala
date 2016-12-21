@@ -79,6 +79,6 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
-1.0.2 - adds Scala 2.12 to the released artifacts
-1.0.1 - better support for plain Java
-1.0.0 - initial release
+* 1.0.2 - adds Scala 2.12 to the released artifacts
+* 1.0.1 - better support for plain Java
+* 1.0.0 - initial release
