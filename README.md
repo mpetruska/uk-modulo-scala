@@ -18,6 +18,14 @@ unfortunately there can be user errors that remain undetected.
 
 License: [MIT](LICENSE)
 
+Notes on validating sort codes
+------------------------------
+
+The ["Industry Sorting Code Directory" (ISCD)][ICSD link]
+should be used to validate UK sort codes.
+
+[ICSD link]: https://en.wikipedia.org/wiki/Industry_Sorting_Code_Directory
+
 Getting started
 ---------------
 
