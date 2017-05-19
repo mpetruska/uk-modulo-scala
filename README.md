@@ -4,7 +4,7 @@ UK modulo - Scala
 =================
 
 This is an implementation of the [VocaLink UK Bank account number
-modulus checking][VocaLink link] version 4.10 (and previous version), written in Scala.
+modulus checking][VocaLink link] version 4.20 (and previous versions), written in Scala.
 
 [VocaLink link]: https://www.vocalink.com/customer-support/modulus-checking/
 
@@ -18,19 +18,27 @@ unfortunately there can be user errors that remain undetected.
 
 License: [MIT](LICENSE)
 
+Notes on validating sort codes
+------------------------------
+
+The ["Industry Sorting Code Directory" (ISCD)][ICSD link]
+should be used to validate UK sort codes.
+
+[ICSD link]: https://en.wikipedia.org/wiki/Industry_Sorting_Code_Directory
+
 Getting started
 ---------------
 
 Sbt:
 
-    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.2.0"
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "1.3.0"
 
 pom.xml:
 
     <dependency>
       <groupId>com.github.mpetruska</groupId>
       <artifactId>uk-modulo-scala_2.11</artifactId>
-      <version>1.2.0</version>
+      <version>1.3.0</version>
     </dependency>
 
 Usage
@@ -79,6 +87,8 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
+* 1.3.0 - updates implementation according to [version 4.20 of the spec](https://www.vocalink.com/media/2434/vocalink-validating-account-numbers-v420.pdf)
+  (effective from 2017/06/12)
 * 1.2.0 - updates implementation according to [version 4.10 of the spec](https://www.vocalink.com/media/2295/vocalink-validating-account-numbers-v410.pdf)
   (effective from 2017/03/06)
 * 1.1.0 - updates implementation according to [version 4.00 of the spec](https://www.vocalink.com/media/2101/vocalink-validating-account-numbers-v400.pdf)
