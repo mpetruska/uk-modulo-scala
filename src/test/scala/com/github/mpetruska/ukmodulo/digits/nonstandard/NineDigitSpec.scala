@@ -10,7 +10,7 @@ class NineDigitSpec extends WordSpec with Matchers {
   "NineDigit" should {
 
     "parse Santander account numbers correctly" in {
-      NineDigit.parseSantanderAccountNumber("000000", "123456789") shouldBe Right(expected)
+      NineDigit.parseSantanderAccountNumber("000000", "123456789")   shouldBe Right(expected)
       NineDigit.parseSantanderAccountNumber("000000", "12345789ced") shouldBe Left(NineDigit.santanderError)
     }
 

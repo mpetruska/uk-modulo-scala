@@ -6,10 +6,10 @@ import scala.util.parsing.combinator.RegexParsers
 
 object SortCodeSubstitutionRowParser extends RegexParsers {
 
-  override val whiteSpace = """[ \t]+""".r
+  override val whiteSpace      = """[ \t]+""".r
 
   def sortCode: Parser[String] = "[0-9]{6}".r
-  def newLine: Parser[Unit] = """(\r?\n)+""".r ^^ (_ => ())
+  def newLine:  Parser[Unit]   = """(\r?\n)+""".r ^^ (_ => ())
 
   def sortCodeSubstitutionRow: Parser[SortCodeSubstitutionRow] = sortCode ~ sortCode ^^ {
     case original ~ replacement => SortCodeSubstitutionRow(original, replacement)

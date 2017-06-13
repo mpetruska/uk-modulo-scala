@@ -20,8 +20,8 @@ object Exception5 {
 
     AccountDigits.getDigit(replacedAccountDigits, 'g').right.map { g =>
       (calculateSum(replacedAccountDigits, weights) % modulus, g) match {
-        case (0, 0) => true
-        case (1, _) => false
+        case (0, 0)         => true
+        case (1, _)         => false
         case (remainder, _) => 11 - remainder == g
       }
     }

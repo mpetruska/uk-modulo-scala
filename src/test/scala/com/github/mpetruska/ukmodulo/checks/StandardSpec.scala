@@ -6,10 +6,10 @@ import org.scalatest.{Matchers, WordSpec}
 class StandardSpec extends WordSpec with Matchers {
 
   val accountDigits1 = AccountDigits(Vector( 0,  0,  0,  0,  0,  0,  5,  8,  1,  7,  7,  6,  3,  2))
-  val weights1 =             Weights(Vector( 0,  0,  0,  0,  0,  0,  7,  5,  8,  3,  4,  6,  2,  1))
+  val weights1       =       Weights(Vector( 0,  0,  0,  0,  0,  0,  7,  5,  8,  3,  4,  6,  2,  1))
 
   val accountDigits2 = AccountDigits(Vector( 0,  0,  0,  0,  0,  0,  5,  8,  1,  7,  7,  6,  3,  3))
-  val weights2 =             Weights(Vector( 0,  0,  0,  0,  0,  0,  7,  5,  8,  3,  4,  6,  2,  1))
+  val weights2       =       Weights(Vector( 0,  0,  0,  0,  0,  0,  7,  5,  8,  3,  4,  6,  2,  1))
 
   "Standard11" should {
 

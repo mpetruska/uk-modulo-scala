@@ -25,7 +25,7 @@ object ModulusCheck {
   def checkParsed(parseResult: Either[Error, AccountDigits]): Either[Error, Boolean] = {
     for {
       accountDigits <- parseResult.right
-      isValid <- process(accountDigits).right
+      isValid       <- process(accountDigits).right
     } yield isValid
   }
 

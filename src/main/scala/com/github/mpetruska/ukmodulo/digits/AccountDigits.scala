@@ -14,12 +14,12 @@ object AccountDigits {
 
   val sortCodeLength = 6
 
-  val sortCodeFormat = "[0-9]{6}".r
+  val sortCodeFormat      = "[0-9]{6}".r
   val accountNumberFormat = "[0-9]{8}".r
 
   val accountNumberError = "Account number format is not valid"
-  val sortCodeError = "Sort code must contain exactly 6 decimal digits without dashes"
-  val digitCodeError = "Unknown digit code"
+  val sortCodeError      = "Sort code must contain exactly 6 decimal digits without dashes"
+  val digitCodeError     = "Unknown digit code"
 
   val digitCodes = "uvwxyzabcdefgh"
   val digitMap: Map[Char, Int] = (digitCodes zip (0 to 14)).toMap
