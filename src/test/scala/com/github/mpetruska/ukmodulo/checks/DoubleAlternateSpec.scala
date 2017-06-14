@@ -6,10 +6,10 @@ import org.scalatest.{Matchers, WordSpec}
 class DoubleAlternateSpec extends WordSpec with Matchers {
 
   val accountDigits1 = AccountDigits(Vector( 4,  9,  9,  2,  7,  3,  1,  2,  3,  4,  5,  6,  7,  8))
-  val weights1 =             Weights(Vector( 2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1))
+  val weights1       =       Weights(Vector( 2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1))
 
   val accountDigits2 = AccountDigits(Vector( 4,  9,  9,  2,  7,  3,  1,  2,  3,  4,  5,  6,  7,  9))
-  val weights2 =             Weights(Vector( 2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1))
+  val weights2       =       Weights(Vector( 2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1,  2,  1))
 
   "DoubleAlternate" should {
 

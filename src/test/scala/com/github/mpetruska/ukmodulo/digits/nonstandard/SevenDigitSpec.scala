@@ -11,7 +11,7 @@ class SevenDigitSpec extends WordSpec with Matchers {
 
     "parse account numbers correctly" in {
       SevenDigit.parse("000000", "1234567") shouldBe Right(expected)
-      SevenDigit.parse("000000", "123457") shouldBe Left(SevenDigit.error)
+      SevenDigit.parse("000000", "123457")  shouldBe Left(SevenDigit.error)
     }
 
   }

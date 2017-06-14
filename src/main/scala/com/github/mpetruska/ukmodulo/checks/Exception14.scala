@@ -18,7 +18,8 @@ object Exception14 {
         val shiftedAccountNumber = AccountDigits.shiftAccountNumberRight(accountDigits)
         Standard11.check(shiftedAccountNumber, weights)
 
-      case _ => false
+      case _ =>
+        false
     }
   }
 

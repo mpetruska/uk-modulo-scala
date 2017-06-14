@@ -10,7 +10,7 @@ class SixDigitSpec extends WordSpec with Matchers {
   "SixDigit" should {
 
     "parse account numbers correctly" in {
-      SixDigit.parse("000000", "123456") shouldBe Right(expected)
+      SixDigit.parse("000000", "123456")  shouldBe Right(expected)
       SixDigit.parse("000000", "1234507") shouldBe Left(SixDigit.error)
     }
 
