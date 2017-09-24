@@ -72,10 +72,10 @@ object ModulusCheck {
         Exception14.check(accountDigits, row.weights)
 
       case standardChecks if standardChecks.forall(_._1.isEmpty) =>
-        EitherChecks.all(
+        EitherChecks.any(
           standardChecks.map{
             case (_, row) => processStandard(accountDigits, row)
-          }: _*
+          }.toSeq
         )
 
       case _ =>
