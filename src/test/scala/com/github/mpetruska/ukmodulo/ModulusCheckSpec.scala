@@ -55,7 +55,8 @@ class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matc
     ("560003",   "23354647",      false),
     ("308087",   "25337846",      false),
     ("308088",   "14457846",      true),
-    ("308088",   "24457846",      false)
+    ("308088",   "24457846",      false),
+    ("902338",   "44189808",      true)
   )
 
   "ModulusCheck" should {
