@@ -15,10 +15,6 @@ lazy val publishSettings = Seq(
   crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.4"),
   publishMavenStyle := true,
   pomExtra :=
-    <scm>
-      <url>git@github.com:mpetruska/uk-modulo-scala.git</url>
-      <connection>scm:git@github.com:mpetruska/uk-modulo-scala.git</connection>
-    </scm>
     <developers>
       <developer>
         <id>mpetruska</id>
