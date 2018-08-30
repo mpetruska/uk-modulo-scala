@@ -12,7 +12,7 @@ lazy val publishSettings = Seq(
   homepage := Some(url("https://github.com/mpetruska/uk-modulo-scala")),
   version := "5.10.0",
   licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
-  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.4"),
+  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.6"),
   publishMavenStyle := true,
   pomExtra :=
     <developers>
