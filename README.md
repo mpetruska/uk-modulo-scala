@@ -4,7 +4,7 @@ UK modulo - Scala
 =================
 
 This is an implementation of the [VocaLink UK Bank account number
-modulus checking][VocaLink link] version 5.10 (and previous versions), written in Scala.
+modulus checking][VocaLink link] version 5.20 (and previous versions), written in Scala.
 
 [VocaLink link]: https://www.vocalink.com/customer-support/modulus-checking/
 
@@ -31,14 +31,14 @@ Getting started
 
 Sbt:
 
-    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "5.10.0"
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "5.20.0"
 
 pom.xml:
 
     <dependency>
       <groupId>com.github.mpetruska</groupId>
       <artifactId>uk-modulo-scala_2.11</artifactId>
-      <version>5.0.0</version>
+      <version>5.20.0</version>
     </dependency>
 
 Usage
@@ -87,6 +87,8 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
+* 5.20.0 - updates implementation according to [version 5.20 of the spec](https://www.vocalink.com/media/3038/validating-account-numbers-v520.pdf)
+  (valid from 2018/10/22)
 * 5.10.0 - updates implementation according to [version 5.10 of the spec](https://www.vocalink.com/media/3035/validating-account-numbers-v510.pdf)
   (valid from 2018/09/17)
 * 5.0.0 - updates implementation according to [version 5.00 of the spec](https://www.vocalink.com/media/3019/vocalink-validating-account-numbers-v500.pdf)
