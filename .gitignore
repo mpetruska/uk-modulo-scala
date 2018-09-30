@@ -10,6 +10,11 @@ project/target/*
 # IntelliJ Idea
 .idea/
 
+# Ensime
+
+.ensime
+.ensime_cache/**
+
 # Mac OS
 .DS_Store
 
