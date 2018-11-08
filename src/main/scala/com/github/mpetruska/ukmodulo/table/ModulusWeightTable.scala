@@ -10,7 +10,7 @@ object ModulusWeightTable extends ResourceTable {
 
   type Row = ModulusWeightRow
 
-  val resourcePath = "/valacdos-v520.txt"
+  val resourcePath = "/valacdos-v530.txt"
 
   def parseAllRows(in: Reader): Either[Error, List[Row]] = {
     ModulusWeightRowParser.parseAllRows(in) match {
