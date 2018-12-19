@@ -4,7 +4,7 @@ UK modulo - Scala
 =================
 
 This is an implementation of the [VocaLink UK Bank account number
-modulus checking][VocaLink link] version 5.30 (and previous versions), written in Scala.
+modulus checking][VocaLink link] version 5.40 (and previous versions), written in Scala.
 
 [VocaLink link]: https://www.vocalink.com/customer-support/modulus-checking/
 
@@ -31,14 +31,14 @@ Getting started
 
 Sbt:
 
-    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "5.30.0"
+    libraryDependencies += "com.github.mpetruska" %% "uk-modulo-scala" % "5.40.0"
 
 pom.xml:
 
     <dependency>
       <groupId>com.github.mpetruska</groupId>
-      <artifactId>uk-modulo-scala_2.11</artifactId>
-      <version>5.30.0</version>
+      <artifactId>uk-modulo-scala_2.12</artifactId>
+      <version>5.40.0</version>
     </dependency>
 
 Usage
@@ -87,32 +87,34 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
+* 5.40.0 - updates implementation according to [version 5.40 of the spec](https://www.vocalink.com/media/3061/vocalink-validating-account-numbers-v540.pdf)
+  (valid from 2019-01-28)
 * 5.30.0 - updates implementation according to [version 5.30 of the spec](https://www.vocalink.com/media/3047/vocalink-validating-account-numbers-v530.pdf)
-  (valid from 2018/11/26)
+  (valid from 2018-11-26)
 * 5.20.0 - updates implementation according to [version 5.20 of the spec](https://www.vocalink.com/media/3038/validating-account-numbers-v520.pdf)
-  (valid from 2018/10/22)
+  (valid from 2018-10-22)
 * 5.10.0 - updates implementation according to [version 5.10 of the spec](https://www.vocalink.com/media/3035/validating-account-numbers-v510.pdf)
-  (valid from 2018/09/17)
+  (valid from 2018-09-17)
 * 5.0.0 - updates implementation according to [version 5.00 of the spec](https://www.vocalink.com/media/3019/vocalink-validating-account-numbers-v500.pdf)
-  (valid from 2018/08/06)
+  (valid from 2018-08-06)
 * 1.9.0 - updates implementation according to [version 4.90 of the spec](https://www.vocalink.com/media/3004/vocalink-validating-account-numbers-v490.pdf)
-  (valid from 2018/07/02)
+  (valid from 2018-07-02)
 * 1.8.0 - updates implementation according to [version 4.80 of the spec](https://www.vocalink.com/media/2920/vocalink-validating-account-numbers-v480.pdf)
-  (valid from 2018/04/16)
+  (valid from 2018-04-16)
 * 1.7.0 - updates implementation according to [version 4.70 of the spec](https://www.vocalink.com/media/2904/vocalink-validating-account-numbers-v47.pdf)
-  (valid from 2018/03/26)
+  (valid from 2018-03-26)
 * 1.6.0 - updates implementation according to [version 4.60 of the spec](https://www.vocalink.com/media/2771/vocalink-validating-account-numbers-v460.pdf)
-  (valid from 2017/10/09)
+  (valid from 2017-10-09)
 * 1.5.0 - updates implementation according to [version 4.40 of the spec](https://www.vocalink.com/media/2717/vocalink-validating-account-numbers-v440.pdf)
-  (valid from 2017/08/21)
+  (valid from 2017-08-21)
 * 1.4.0 - updates implementation according to [version 4.30 of the spec](https://www.vocalink.com/media/2467/vocalink-validating-account-numbers-v430.pdf)
-  (valid from 2017/07/03)
+  (valid from 2017-07-03)
 * 1.3.0 - updates implementation according to [version 4.20 of the spec](https://www.vocalink.com/media/2434/vocalink-validating-account-numbers-v420.pdf)
-  (valid from 2017/06/12)
+  (valid from 2017-06-12)
 * 1.2.0 - updates implementation according to [version 4.10 of the spec](https://www.vocalink.com/media/2295/vocalink-validating-account-numbers-v410.pdf)
-  (valid from 2017/03/06)
+  (valid from 2017-03-06)
 * 1.1.0 - updates implementation according to [version 4.00 of the spec](https://www.vocalink.com/media/2101/vocalink-validating-account-numbers-v400.pdf)
-  (valid from 2017/01/09)
+  (valid from 2017-01-09)
 * 1.0.2 - adds Scala 2.12 to the released artifacts
 * 1.0.1 - better support for plain Java
 * 1.0.0 - initial release, spec version 3.90
