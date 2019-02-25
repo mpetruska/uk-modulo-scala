@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/mpetruska/uk-modulo-scala.svg?branch=master)](https://travis-ci.org/mpetruska/uk-modulo-scala)
+[![Known Vulnerabilities](https://snyk.io/test/github/mpetruska/uk-modulo-scala/badge.svg?targetFile=build.sbt)](https://snyk.io/test/github/mpetruska/uk-modulo-scala?targetFile=build.sbt)
 
 UK modulo - Scala
 =================
