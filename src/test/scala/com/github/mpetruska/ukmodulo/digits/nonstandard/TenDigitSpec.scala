@@ -15,7 +15,7 @@ class TenDigitSpec extends WordSpec with Matchers {
       TenDigit.parseNationalWestminsterAccountNumber("000000", "00-123456")   shouldBe Left(TenDigit.nationalWestMinsterError)
     }
 
-    "parse Co-Operative account numbers correctly" in {
+    "parse Co-Operative Bank and Leeds Building Society account numbers correctly" in {
       TenDigit.parseCoOperativeOrLeedsBuildingSocietyAccountNumber("000000", "1234567890")   shouldBe Right(expected)
       TenDigit.parseCoOperativeOrLeedsBuildingSocietyAccountNumber("000000", "aaa123456890") shouldBe Left(TenDigit.coOperativeAndLeedsBuildingSocietyError)
     }
