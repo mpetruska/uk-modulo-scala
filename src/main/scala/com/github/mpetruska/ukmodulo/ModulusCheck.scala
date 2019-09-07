@@ -14,7 +14,7 @@ object ModulusCheck {
       Seq(
         AccountDigits.parse(sortCode, accountNumber),
         TenDigit.parseNationalWestminsterAccountNumber(sortCode, accountNumber),
-        TenDigit.parseCoOperativeAccountNumber(sortCode, accountNumber),
+        TenDigit.parseCoOperativeOrLeedsBuildingSocietyAccountNumber(sortCode, accountNumber),
         NineDigit.parseSantanderAccountNumber(sortCode, accountNumber),
         SevenDigit.parse(sortCode, accountNumber),
         SixDigit.parse(sortCode, accountNumber)
