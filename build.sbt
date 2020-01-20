@@ -1,6 +1,6 @@
 
 lazy val buildSettings = Seq(
-  scalacOptions ++= Seq("-unchecked", "-deprecation"),
+  scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xfatal-warnings"),
   initialize :=
     (if (scalaBinaryVersion.value == "2.10") sys.props("scalac.patmat.analysisBudget") = "off"
      else sys.props.remove("scalac.patmat.analysisBudget"))
@@ -10,7 +10,7 @@ lazy val publishSettings = Seq(
   organization := "com.github.mpetruska",
   name := "uk-modulo-scala",
   homepage := Some(url("https://github.com/mpetruska/uk-modulo-scala")),
-  version := "5.80.0",
+  version := "5.90.0",
   licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
   crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.4"),
   publishMavenStyle := true,
