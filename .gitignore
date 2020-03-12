@@ -10,13 +10,19 @@ project/target/*
 # IntelliJ Idea
 .idea/
 
-# Ensime
+# Emacs
 
-.ensime
-.ensime_cache/**
+*~
+/.metals/
+/.bloop/
+/project/.bloop
+/project/metals.sbt
+\#*\#
+.\#*
 
 # Mac OS
 .DS_Store
 
 # Binaries 
 *.class
+

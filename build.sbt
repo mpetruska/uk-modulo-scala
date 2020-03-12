@@ -10,9 +10,9 @@ lazy val publishSettings = Seq(
   organization := "com.github.mpetruska",
   name := "uk-modulo-scala",
   homepage := Some(url("https://github.com/mpetruska/uk-modulo-scala")),
-  version := "5.90.0",
+  version := "6.00.0",
   licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
-  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.4"),
+  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.10"),
   publishMavenStyle := true,
   pomExtra :=
     <developers>
@@ -36,7 +36,7 @@ lazy val ukModuloScala = (project in file("."))
   .settings(publishSettings: _*)
   .settings(
     libraryDependencies ++= (Seq(
-        "org.scalatest" %% "scalatest" % "3.0.1" % Test,
+        "org.scalatest"  %% "scalatest"  % "3.0.1"  % Test,
         "org.scalacheck" %% "scalacheck" % "1.13.4" % Test
       )
       ++ (scalaBinaryVersion.value match {
