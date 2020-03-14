@@ -88,6 +88,7 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 Version history
 ---------------
 
+* 6.00.1 - fixes implicit change in the meaning of exception code 6
 * 6.00.0 - updates implementation according to [version 6.00 of the spec](https://www.vocalink.com/media/4363/vocalink-validating-account-numbers-v600.pdf)
   (valid from 2020-04-06)
 * 5.90.0 - updates implementation according to [version 5.90 of the spec](https://www.vocalink.com/media/4325/vocalink-validating-account-numbers-v590.pdf)
