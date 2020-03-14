@@ -6,7 +6,7 @@ import com.github.mpetruska.ukmodulo.table.ModulusWeightRow
 
 object Exception6 {
 
-  def check(accountDigits: AccountDigits, row1: ModulusWeightRow, row2: ModulusWeightRow): Either[Error, Boolean] = {
+  def check(accountDigits: AccountDigits, rows: Seq[ModulusWeightRow]): Either[Error, Boolean] = {
     import AccountDigits._
     (for {
       a <- getDigit(accountDigits, 'a').right
@@ -14,16 +14,15 @@ object Exception6 {
       h <- getDigit(accountDigits, 'h').right
     } yield (a, g == h) match {
       case (4, true) | (5, true) | (6, true) | (7, true) | (8, true) => Right(true)
-      case _ => checkStandard(accountDigits, row1, row2)
+      case _                                                         => checkStandard(accountDigits, rows)
     }).right.flatMap(identity)
   }
 
-  def checkStandard(accountDigits: AccountDigits, row1: ModulusWeightRow, row2: ModulusWeightRow): Either[Error, Boolean] = {
+  def checkStandard(accountDigits: AccountDigits, rows: Seq[ModulusWeightRow]): Either[Error, Boolean] = {
     import ModulusCheck._
 
     EitherChecks.all(
-      processStandard(accountDigits, row1),
-      processStandard(accountDigits, row2)
+      rows.map(processStandard(accountDigits, _)): _*
     )
   }
 
