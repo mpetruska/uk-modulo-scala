@@ -4,11 +4,11 @@ object EitherChecks {
 
   def all[E](eithers: Either[E, Boolean]*): Either[E, Boolean] = {
     eithers.reduce[Either[E, Boolean]] {
-      case (left @ Left(_), _)                => left
-      case (_, left @ Left(_))                => left
-      case (right @ Right(true), Right(true)) => right
-      case (right @ Right(false), _)          => right
-      case (_, right @ Right(false))          => right
+      case (left @ Left(_),       _                   ) => left
+      case (_,                    left @ Left(_)      ) => left
+      case (right @ Right(true),  Right(true)         ) => right
+      case (right @ Right(false), _                   ) => right
+      case (_,                    right @ Right(false)) => right
     }
   }
 
