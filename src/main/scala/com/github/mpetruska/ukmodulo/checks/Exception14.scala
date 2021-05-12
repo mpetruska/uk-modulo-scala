@@ -13,7 +13,7 @@ object Exception14 {
   }
 
   def secondCheck(accountDigits: AccountDigits, weights: Weights): Either[Error, Boolean] = {
-    AccountDigits.getDigit(accountDigits, 'h').right.map {
+    AccountDigits.getDigit(accountDigits, 'h').map {
       case 0 | 1 | 9 =>
         val shiftedAccountNumber = AccountDigits.shiftAccountNumberRight(accountDigits)
         Standard11.check(shiftedAccountNumber, weights)

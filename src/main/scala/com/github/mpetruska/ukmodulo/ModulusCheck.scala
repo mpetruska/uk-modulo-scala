@@ -24,13 +24,13 @@ object ModulusCheck {
 
   def checkParsed(parseResult: Either[Error, AccountDigits]): Either[Error, Boolean] = {
     for {
-      accountDigits <- parseResult.right
-      isValid       <- process(accountDigits).right
+      accountDigits <- parseResult
+      isValid       <- process(accountDigits)
     } yield isValid
   }
 
   def process(accountDigits: AccountDigits): Either[Error, Boolean] = {
-    ModulusWeightTable.getWeightRowsFor(accountDigits).right.flatMap(processWithWeights(accountDigits))
+    ModulusWeightTable.getWeightRowsFor(accountDigits).flatMap(processWithWeights(accountDigits))
   }
 
   def processWithWeights(accountDigits: AccountDigits)(weightRows: List[ModulusWeightRow]): Either[Error, Boolean] = {

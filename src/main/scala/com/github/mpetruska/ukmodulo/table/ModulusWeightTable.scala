@@ -10,18 +10,19 @@ object ModulusWeightTable extends ResourceTable {
 
   type Row = ModulusWeightRow
 
-  val resourcePath = "/valacdos-v612.txt"
+  val resourcePath = "/valacdos-v660.txt"
 
   def parseAllRows(in: Reader): Either[Error, List[Row]] = {
     ModulusWeightRowParser.parseAllRows(in) match {
       case Success  (value, _) => Right(value)
-      case NoSuccess(error, _) => Left(error)
+      case Failure(error, _) => Left(error)
+      case Error(error, _) => Left(error)
     }
   }
 
   def getWeightRowsFor(accountDigits: AccountDigits): Either[Error, List[ModulusWeightRow]] = {
     val accountNumber = AccountDigits.getSortCode(accountDigits)
-    table.right.map { weightTable =>
+    table.map { weightTable =>
       weightTable.filter(row => row.rangeStart <= accountNumber && row.rangeEnd >= accountNumber)
     }
   }

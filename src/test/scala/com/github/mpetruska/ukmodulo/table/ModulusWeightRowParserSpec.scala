@@ -3,15 +3,16 @@ package com.github.mpetruska.ukmodulo.table
 import java.io.InputStreamReader
 
 import com.github.mpetruska.ukmodulo.digits.Weights
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class ModulusWeightRowParserSpec extends WordSpec with Matchers {
+class ModulusWeightRowParserSpec extends AnyWordSpec with Matchers {
 
   "ModulusWeightRowParser" should {
     import ModulusWeightRowParser._
 
     "be able to parse the weights table" in {
-      val parseResult = parseAllRows(new InputStreamReader(ModulusWeightRowParser.getClass.getResourceAsStream("/valacdos-v612.txt")))
+      val parseResult = parseAllRows(new InputStreamReader(ModulusWeightRowParser.getClass.getResourceAsStream("/valacdos-v660.txt")))
       parseResult.successful shouldBe true
       
       val rows = parseResult.get

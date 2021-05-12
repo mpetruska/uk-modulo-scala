@@ -18,7 +18,7 @@ object Exception3 {
   }
 
   def exception3Check(accountDigits: AccountDigits, row: ModulusWeightRow): Either[Error, Boolean] = {
-    AccountDigits.getDigit(accountDigits, 'c').right
+    AccountDigits.getDigit(accountDigits, 'c')
       .map {
         case 6 | 9 => true
         case _     => DoubleAlternate.check(accountDigits, row.weights)

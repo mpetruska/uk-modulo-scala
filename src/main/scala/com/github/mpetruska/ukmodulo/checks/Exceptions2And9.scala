@@ -19,8 +19,8 @@ object Exceptions2And9 extends Standard11 {
   def exception2Check(accountDigits: AccountDigits, weights: Weights): Either[Error, Boolean] = {
     import AccountDigits._
     for {
-      a <- getDigit(accountDigits, 'a').right
-      g <- getDigit(accountDigits, 'g').right
+      a <- getDigit(accountDigits, 'a')
+      g <- getDigit(accountDigits, 'g')
     } yield {
       (a, g) match {
         case (0, _) => super.check(accountDigits, weights)
@@ -31,7 +31,7 @@ object Exceptions2And9 extends Standard11 {
   }
 
   def exception9Check(accountDigits: AccountDigits, weights: Weights): Either[Error, Boolean] = {
-    AccountDigits.replaceSortCode(accountDigits, replacementSortCode).right
+    AccountDigits.replaceSortCode(accountDigits, replacementSortCode)
       .map(replaced => super.check(replaced, weights))
   }
 

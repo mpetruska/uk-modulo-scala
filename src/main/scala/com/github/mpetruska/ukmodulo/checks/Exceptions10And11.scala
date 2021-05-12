@@ -17,16 +17,16 @@ object Exceptions10And11 {
     import AccountDigits._
 
     (for {
-      a <- getDigit(accountDigits, 'a').right
-      b <- getDigit(accountDigits, 'b').right
-      g <- getDigit(accountDigits, 'g').right
+      a <- getDigit(accountDigits, 'a')
+      b <- getDigit(accountDigits, 'b')
+      g <- getDigit(accountDigits, 'g')
     } yield (a, b, g) match {
       case (0, 9, 9) | (9, 9, 9) =>
         val newRow = weightRow.copy(weights = Weights.zeroiseUtoB(weightRow.weights))
         ModulusCheck.processStandard(accountDigits, newRow)
       case _ =>
         ModulusCheck.processStandard(accountDigits, weightRow)
-    }).right.flatMap(identity)
+    }).flatMap(identity)
   }
 
   def exception11Check(accountDigits: AccountDigits, weightRow: ModulusWeightRow): Either[Error, Boolean] = {
