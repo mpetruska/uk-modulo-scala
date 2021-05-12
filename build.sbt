@@ -26,7 +26,7 @@ lazy val publishSettings = Seq(
     else
       Some("releases"  at nexus + "service/local/staging/deploy/maven2")
   },
-  publishArtifact in Test := false
+  Test / publishArtifact := false
 )
 
 lazy val ukModuloScala = (project in file("."))
