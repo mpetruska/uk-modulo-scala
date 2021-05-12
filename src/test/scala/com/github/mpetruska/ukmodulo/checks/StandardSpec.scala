@@ -1,9 +1,10 @@
 package com.github.mpetruska.ukmodulo.checks
 
 import com.github.mpetruska.ukmodulo.digits.{Weights, AccountDigits}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class StandardSpec extends WordSpec with Matchers {
+class StandardSpec extends AnyWordSpec with Matchers {
 
   val accountDigits1 = AccountDigits(Vector( 0,  0,  0,  0,  0,  0,  5,  8,  1,  7,  7,  6,  3,  2))
   val weights1       =       Weights(Vector( 0,  0,  0,  0,  0,  0,  7,  5,  8,  3,  4,  6,  2,  1))

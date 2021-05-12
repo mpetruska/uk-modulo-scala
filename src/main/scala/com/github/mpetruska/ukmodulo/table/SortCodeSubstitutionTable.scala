@@ -15,12 +15,13 @@ object SortCodeSubstitutionTable extends ResourceTable {
   def parseAllRows(in: Reader): Either[Error, List[Row]] = {
     SortCodeSubstitutionRowParser.parseAllRows(in) match {
       case Success(value, _)   => Right(value)
-      case NoSuccess(error, _) => Left(error)
+      case Failure(error, _) => Left(error)
+      case Error(error, _) => Left(error)
     }
   }
 
   def performSubstitutionFor(accountDigits: AccountDigits): Either[Error, AccountDigits] = {
-    table.right.flatMap { substitutionTable =>
+    table.flatMap { substitutionTable =>
       val originalSortCode = AccountDigits.getSortCode(accountDigits)
       substitutionTable.find(_.originalSortCode == originalSortCode) match {
         case None             => Right(accountDigits)

@@ -1,18 +1,16 @@
 
 lazy val buildSettings = Seq(
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xfatal-warnings"),
-  initialize :=
-    (if (scalaBinaryVersion.value == "2.10") sys.props("scalac.patmat.analysisBudget") = "off"
-     else sys.props.remove("scalac.patmat.analysisBudget"))
+  initialize := sys.props.remove("scalac.patmat.analysisBudget")
 )
 
 lazy val publishSettings = Seq(
   organization := "com.github.mpetruska",
   name := "uk-modulo-scala",
   homepage := Some(url("https://github.com/mpetruska/uk-modulo-scala")),
-  version := "6.12.0",
+  version := "6.60.0",
   licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/mit-license.php")),
-  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.10"),
+  crossScalaVersions := Seq("2.12.13", "2.13.5"),
   publishMavenStyle := true,
   pomExtra :=
     <developers>
@@ -36,15 +34,9 @@ lazy val ukModuloScala = (project in file("."))
   .settings(publishSettings: _*)
   .settings(
     libraryDependencies ++= (Seq(
-        "org.scalatest"  %% "scalatest"  % "3.0.1"  % Test,
-        "org.scalacheck" %% "scalacheck" % "1.13.4" % Test
-      )
-      ++ (scalaBinaryVersion.value match {
-        case "2.11" | "2.12" =>
-          Seq(
-            "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.5"
-          )
-        case "2.10" =>
-          Seq.empty
-      }))
+        "org.scalatest"  %% "scalatest"  % "3.2.8"  % Test,
+        "org.scalacheck" %% "scalacheck" % "1.15.4" % Test,
+        "org.scalatestplus" %% "scalacheck-1-15" % "3.2.5.0" % Test,
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
+      ))
   )

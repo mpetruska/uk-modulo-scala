@@ -9,7 +9,7 @@ object Exception8 {
   val sortCodeReplacement = "090126"
 
   def check(accountDigits: AccountDigits, weightRow: ModulusWeightRow): Either[Error, Boolean] = {
-    AccountDigits.replaceSortCode(accountDigits, sortCodeReplacement).right.flatMap { replacedAccountDigits =>
+    AccountDigits.replaceSortCode(accountDigits, sortCodeReplacement).flatMap { replacedAccountDigits =>
       ModulusCheck.processStandard(replacedAccountDigits, weightRow)
     }
   }

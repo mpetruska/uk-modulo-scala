@@ -1,10 +1,11 @@
 package com.github.mpetruska.ukmodulo.digits
 
 import org.scalacheck.Gen
-import org.scalatest.{Matchers, WordSpec}
-import org.scalatest.prop.PropertyChecks
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-class AccountDigitsSpec extends WordSpec with PropertyChecks with Matchers {
+class AccountDigitsSpec extends AnyWordSpec with ScalaCheckPropertyChecks with Matchers {
 
   def digitsGenerator(n: Int): Gen[Array[Int]] =
     Gen.listOfN(n, Gen.chooseNum(0, 9)).map(_.toArray).suchThat(_.length == n)

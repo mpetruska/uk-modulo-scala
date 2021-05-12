@@ -1,9 +1,10 @@
 package com.github.mpetruska.ukmodulo
 
+import org.scalatest.matchers.should.Matchers
 import org.scalatest.prop.TableDrivenPropertyChecks
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
 
-class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matchers {
+class ModulusCheckSpec extends AnyWordSpec with TableDrivenPropertyChecks with Matchers {
 
   val specificationTestData = Table(
     ("testNumber", "description", "sortCode", "accountNumber", "result"),
@@ -55,7 +56,13 @@ class ModulusCheckSpec extends WordSpec with TableDrivenPropertyChecks with Matc
     ("560003",   "23354647",      false),
     ("308087",   "25337846",      false),
     ("308088",   "14457846",      true),
-    ("308088",   "24457846",      false)
+    ("040086",   "00000001",      false),
+    ("040340",   "00000001",      false),
+    ("040390",   "00000001",      false),
+    ("042900",   "00000001",      false),
+    ("406460",   "00000001",      false),
+    ("236802",   "00000001",      false),
+    ("608410",   "00000001",      false)
   )
 
   "ModulusCheck" should {

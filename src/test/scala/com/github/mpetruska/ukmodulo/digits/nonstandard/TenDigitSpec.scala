@@ -1,9 +1,10 @@
 package com.github.mpetruska.ukmodulo.digits.nonstandard
 
 import com.github.mpetruska.ukmodulo.digits.AccountDigits
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class TenDigitSpec extends WordSpec with Matchers {
+class TenDigitSpec extends AnyWordSpec with Matchers {
 
   val expected = AccountDigits(Vector.fill(6)(0) ++ (1 to 8).toVector)
 

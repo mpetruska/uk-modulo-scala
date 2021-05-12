@@ -9,13 +9,13 @@ object Exception6 {
   def check(accountDigits: AccountDigits, rows: Seq[ModulusWeightRow]): Either[Error, Boolean] = {
     import AccountDigits._
     (for {
-      a <- getDigit(accountDigits, 'a').right
-      g <- getDigit(accountDigits, 'g').right
-      h <- getDigit(accountDigits, 'h').right
+      a <- getDigit(accountDigits, 'a')
+      g <- getDigit(accountDigits, 'g')
+      h <- getDigit(accountDigits, 'h')
     } yield (a, g == h) match {
       case (4, true) | (5, true) | (6, true) | (7, true) | (8, true) => Right(true)
       case _                                                         => checkStandard(accountDigits, rows)
-    }).right.flatMap(identity)
+    }).flatMap(identity)
   }
 
   def checkStandard(accountDigits: AccountDigits, rows: Seq[ModulusWeightRow]): Either[Error, Boolean] = {

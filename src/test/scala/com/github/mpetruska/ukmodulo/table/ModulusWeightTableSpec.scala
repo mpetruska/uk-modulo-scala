@@ -1,9 +1,10 @@
 package com.github.mpetruska.ukmodulo.table
 
 import com.github.mpetruska.ukmodulo.digits._
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class ModulusWeightTableSpec extends WordSpec with Matchers {
+class ModulusWeightTableSpec extends AnyWordSpec with Matchers {
 
   val accountDigits1 = AccountDigits(Vector(2, 0, 0, 0, 0, 0) ++ Vector.fill(8)(0))
   val accountDigits2 = AccountDigits(Vector(2, 0, 0, 0, 0, 1) ++ (1 to 8).toVector)
