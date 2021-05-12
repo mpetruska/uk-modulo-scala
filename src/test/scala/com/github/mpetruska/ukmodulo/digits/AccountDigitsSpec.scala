@@ -19,7 +19,7 @@ class AccountDigitsSpec extends AnyWordSpec with ScalaCheckPropertyChecks with M
         val result        = AccountDigits.parse(sortCode, accountNumber)
         
         result.isRight          shouldBe true
-        result.right.get.digits shouldBe Array.concat(sortCodeDigits, accountNumberDigits)
+        result.toOption.get.digits shouldBe Array.concat(sortCodeDigits, accountNumberDigits)
       }
     }
 
