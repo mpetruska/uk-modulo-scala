@@ -12,7 +12,7 @@ class ModulusWeightRowParserSpec extends AnyWordSpec with Matchers {
     import ModulusWeightRowParser._
 
     "be able to parse the weights table" in {
-      val parseResult = parseAllRows(new InputStreamReader(ModulusWeightRowParser.getClass.getResourceAsStream("/valacdos-v660.txt")))
+      val parseResult = parseAllRows(new InputStreamReader(ModulusWeightRowParser.getClass.getResourceAsStream("/valacdos-v680.txt")))
       parseResult.successful shouldBe true
       
       val rows = parseResult.get
