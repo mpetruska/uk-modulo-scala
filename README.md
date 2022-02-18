@@ -87,7 +87,8 @@ Please report issues and feature requests [here](https://github.com/mpetruska/uk
 
 Version history
 ---------------
-
+* 6.90.0 - updates implementation according to [version 6.90 of the spec](https://www.vocalink.com/media/000dcpzj/vocalink-validating-account-numbers-v6-90.pdf)
+  (valid from 2022-02-14)
 * 6.80.0 - updates implementation according to [version 6.80 of the spec](https://www.vocalink.com/media/3allk2nz/vocalink-validating-account-numbers-v6-80.pdf)
   (valid from 2021-10-04)
 * 6.60.0 - add Scala 2.13, remove Scala 2.10 and 2.11. Also updates implementation according to [version 6.60 of the spec](https://www.vocalink.com/media/4940/vocalink-validating-account-numbers-v660.pdf)
