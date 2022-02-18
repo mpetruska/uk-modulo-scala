@@ -5,7 +5,7 @@ UK modulo - Scala
 =================
 
 This is an implementation of the [VocaLink UK Bank account number
-modulus checking][VocaLink link] version 6.80 (and previous versions), written in Scala.
+modulus checking][VocaLink link] version 6.90 (and previous versions), written in Scala.
 
 [VocaLink link]: https://www.vocalink.com/tools/modulus-checking/
 
