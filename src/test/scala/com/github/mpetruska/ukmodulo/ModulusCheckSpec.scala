@@ -60,7 +60,7 @@ class ModulusCheckSpec extends AnyWordSpec with TableDrivenPropertyChecks with M
     ("040340",   "00000001",      false),
     ("040390",   "00000001",      false),
     ("042900",   "00000001",      false),
-    ("406460",   "00000001",      false),
+    ("406460",   "00000001",      true),
     ("236802",   "00000001",      false),
     ("608410",   "00000001",      false)
   )
